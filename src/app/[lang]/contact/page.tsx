@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import { generatePageMetadata } from "@/lib/metadata";
+import ContactForm from "@/components/ContactForm";
+import { FadeInUp } from "@/components/PageTransition";
+import { SITE_CONFIG } from "@/lib/constants";
 
 export const metadata: Metadata = generatePageMetadata(
   "Contact",
@@ -10,70 +13,92 @@ export const metadata: Metadata = generatePageMetadata(
 export default function ContactPage() {
   return (
     <main className="container mx-auto px-4 py-12">
-      <header className="mb-8">
-        <h1 className="text-3xl md:text-4xl font-bold">Contact</h1>
-        <p className="mt-2 text-black/70 dark:text-white/70 max-w-2xl">
-          Get in touch via the form or social links.
-        </p>
-      </header>
-      <section className="grid gap-8 md:grid-cols-2">
-        <form className="space-y-4" aria-label="Contact form">
+      <FadeInUp>
+        <header className="mb-12 text-center">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Let's Work Together</h1>
+          <p className="text-lg text-black/70 dark:text-white/70 max-w-2xl mx-auto">
+            Ready to bring your creative vision to life? Get in touch and let's discuss your next project.
+          </p>
+        </header>
+      </FadeInUp>
+
+      <div className="grid gap-12 lg:grid-cols-2">
+        <FadeInUp delay={0.2}>
           <div>
-            <label htmlFor="name" className="block text-sm font-medium">
-              Name
-            </label>
-            <input
-              id="name"
-              type="text"
-              className="mt-1 w-full border rounded px-3 py-2 border-black/15 dark:border-white/15 bg-transparent"
-              placeholder="Your name"
-              required
-            />
+            <h2 className="text-2xl font-semibold mb-6">Send us a message</h2>
+            <ContactForm />
           </div>
-          <div>
-            <label htmlFor="email" className="block text-sm font-medium">
-              Email
-            </label>
-            <input
-              id="email"
-              type="email"
-              className="mt-1 w-full border rounded px-3 py-2 border-black/15 dark:border-white/15 bg-transparent"
-              placeholder="you@example.com"
-              required
-            />
-          </div>
-          <div>
-            <label htmlFor="message" className="block text-sm font-medium">
-              Message
-            </label>
-            <textarea
-              id="message"
-              className="mt-1 w-full border rounded px-3 py-2 border-black/15 dark:border-white/15 bg-transparent min-h-32"
-              placeholder="Tell me about your project"
-              required
-            />
-          </div>
-          <button type="submit" className="px-4 py-2 rounded bg-black text-white dark:bg-white dark:text-black">
-            Send
-          </button>
-        </form>
-        <aside>
-          <ul className="space-y-2">
-            <li>
-              <a href="mailto:hello@example.com" className="hover:underline">hello@example.com</a>
-            </li>
-            <li>
-              <a href="tel:+1234567890" className="hover:underline">+1 (234) 567-890</a>
-            </li>
-            <li>
-              <a href="https://github.com/Anubhab021" target="_blank" rel="noreferrer" aria-label="GitHub" className="hover:underline">GitHub</a>
-            </li>
-            <li>
-              <a href="https://www.linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="hover:underline">LinkedIn</a>
-            </li>
-          </ul>
-        </aside>
-      </section>
+        </FadeInUp>
+
+        <FadeInUp delay={0.4}>
+          <aside className="space-y-8">
+            <div>
+              <h2 className="text-2xl font-semibold mb-6">Get in touch</h2>
+              <div className="space-y-4">
+                <div className="flex items-center space-x-3">
+                  <div className="w-10 h-10 bg-black/10 dark:bg-white/10 rounded-full flex items-center justify-center">
+                    📧
+                  </div>
+                  <div>
+                    <p className="font-medium">Email</p>
+                    <a 
+                      href={`mailto:${SITE_CONFIG.links.email}`} 
+                      className="text-black/70 dark:text-white/70 hover:underline"
+                    >
+                      {SITE_CONFIG.links.email}
+                    </a>
+                  </div>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-10 h-10 bg-black/10 dark:bg-white/10 rounded-full flex items-center justify-center">
+                    📱
+                  </div>
+                  <div>
+                    <p className="font-medium">Phone</p>
+                    <a 
+                      href={`tel:${SITE_CONFIG.links.phone}`} 
+                      className="text-black/70 dark:text-white/70 hover:underline"
+                    >
+                      {SITE_CONFIG.links.phone}
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-semibold mb-4">Follow us</h3>
+              <div className="flex space-x-4">
+                <a
+                  href={SITE_CONFIG.links.github}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="w-10 h-10 bg-black/10 dark:bg-white/10 rounded-full flex items-center justify-center hover:bg-black/20 dark:hover:bg-white/20 transition-colors"
+                  aria-label="GitHub"
+                >
+                  <span className="text-lg">⚡</span>
+                </a>
+                <a
+                  href={SITE_CONFIG.links.linkedin}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="w-10 h-10 bg-black/10 dark:bg-white/10 rounded-full flex items-center justify-center hover:bg-black/20 dark:hover:bg-white/20 transition-colors"
+                  aria-label="LinkedIn"
+                >
+                  <span className="text-lg">💼</span>
+                </a>
+              </div>
+            </div>
+
+            <div className="p-6 bg-black/5 dark:bg-white/5 rounded-lg">
+              <h3 className="font-semibold mb-2">Response Time</h3>
+              <p className="text-sm text-black/70 dark:text-white/70">
+                We typically respond within 24 hours during business days.
+              </p>
+            </div>
+          </aside>
+        </FadeInUp>
+      </div>
     </main>
   );
 }

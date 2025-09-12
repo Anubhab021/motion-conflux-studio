@@ -3,6 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
 import ThemeToggle from "@/components/ThemeToggle";
+import ScrollToTop from "@/components/ScrollToTop";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 import { defaultMetadata } from "@/lib/metadata";
 
 const geistSans = Geist({
@@ -55,6 +57,8 @@ export default function RootLayout({
             </div>
           </div>
         </footer>
+        <ScrollToTop />
+        <GoogleAnalytics />
         <script
           dangerouslySetInnerHTML={{
             __html: `
