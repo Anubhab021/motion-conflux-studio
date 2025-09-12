@@ -4,14 +4,6 @@ import SearchBar from "@/components/SearchBar";
 import Lightbox from "@/components/Lightbox";
 import { HoverScale, FadeInUp } from "@/components/PageTransition";
 import { Project } from "@/types/project";
-import type { Metadata } from "next";
-import { generatePageMetadata } from "@/lib/metadata";
-
-export const metadata: Metadata = generatePageMetadata(
-  "Projects",
-  "Explore our portfolio of motion graphics, 3D animation, VFX, and web development projects.",
-  "/en/projects"
-);
 
 const categories: { label: string; value: Project["category"] | "All" }[] = [
   { label: "All", value: "All" },

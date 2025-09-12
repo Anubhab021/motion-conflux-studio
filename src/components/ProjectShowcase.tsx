@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { TbExternalLink, TbGithub } from "react-icons/tb";
+import { TbExternalLink, TbBrandGithub } from "react-icons/tb";
 import { Project } from "@/types/project";
 import { trackProjectView } from "@/lib/analytics";
 
@@ -66,7 +66,7 @@ export default function ProjectShowcase({ projects, featured = false }: ProjectS
                       className="p-2 bg-white text-black rounded-full hover:bg-gray-100 transition-colors"
                       aria-label={`View ${project.title} source code`}
                     >
-                      <TbGithub size={16} />
+                      <TbBrandGithub size={16} />
                     </button>
                   </motion.div>
                 )}

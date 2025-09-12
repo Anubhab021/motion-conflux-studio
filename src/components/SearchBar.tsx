@@ -38,7 +38,7 @@ export default function SearchBar({ onResultClick }: SearchBarProps) {
   useEffect(() => {
     if (query.trim()) {
       const searchResults = miniSearch.search(query, { fuzzy: 0.2 });
-      setResults(searchResults as Project[]);
+      setResults(searchResults as unknown as Project[]);
       setIsOpen(true);
     } else {
       setResults([]);

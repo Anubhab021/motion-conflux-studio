@@ -9,7 +9,7 @@ export const metadata: Metadata = generatePageMetadata(
   "/en"
 );
 
-export default function LangHome({ params }: { params: { lang: string } }) {
+export default function LangHome() {
   return (
     <section className="relative overflow-hidden min-h-[80vh] flex items-center">
       <div className="container mx-auto px-4 py-16 md:py-24">

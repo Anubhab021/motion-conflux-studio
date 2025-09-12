@@ -32,15 +32,25 @@ export default function ContactForm() {
     setSubmitStatus("idle");
 
     try {
-      // Simulate form submission
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      // Track form submission
-      trackContactForm("contact");
-      
-      setSubmitStatus("success");
-      setFormData({ name: "", email: "", subject: "", message: "" });
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        // Track form submission
+        trackContactForm("contact");
+        
+        setSubmitStatus("success");
+        setFormData({ name: "", email: "", subject: "", message: "" });
+      } else {
+        setSubmitStatus("error");
+      }
     } catch (error) {
+      console.error('Form submission error:', error);
       setSubmitStatus("error");
     } finally {
       setIsSubmitting(false);

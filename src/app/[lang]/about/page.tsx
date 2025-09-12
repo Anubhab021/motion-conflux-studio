@@ -7,7 +7,7 @@ export const metadata: Metadata = generatePageMetadata(
   "/en/about"
 );
 
-export default function AboutPage({ params }: { params: { lang: string } }) {
+export default function AboutPage() {
   return (
     <main className="container mx-auto px-4 py-12">
       <header className="mb-8">

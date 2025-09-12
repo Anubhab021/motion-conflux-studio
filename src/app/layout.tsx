@@ -5,6 +5,7 @@ import Link from "next/link";
 import ThemeToggle from "@/components/ThemeToggle";
 import ScrollToTop from "@/components/ScrollToTop";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
+import Footer from "@/components/Footer";
 import { defaultMetadata } from "@/lib/metadata";
 
 const geistSans = Geist({
@@ -44,19 +45,7 @@ export default function RootLayout({
           </nav>
         </header>
         <main className="flex-1">{children}</main>
-        <footer className="border-t border-black/10 dark:border-white/10 py-6">
-          <div className="container mx-auto px-4 text-sm flex items-center justify-between">
-            <p>&copy; {new Date().getFullYear()} Motion Conflux Studio</p>
-            <div className="flex gap-4" aria-label="Social links">
-              <a href="https://github.com/Anubhab021" target="_blank" rel="noreferrer" className="hover:underline" aria-label="GitHub">
-                GitHub
-              </a>
-              <a href="https://www.linkedin.com" target="_blank" rel="noreferrer" className="hover:underline" aria-label="LinkedIn">
-                LinkedIn
-              </a>
-            </div>
-          </div>
-        </footer>
+        <Footer />
         <ScrollToTop />
         <GoogleAnalytics />
         <script

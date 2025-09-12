@@ -63,7 +63,7 @@ export default function TestimonialCarousel({
             className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg"
           >
             <blockquote className="text-lg md:text-xl text-gray-700 dark:text-gray-300 mb-6">
-              "{testimonials[currentIndex].content}"
+              &ldquo;{testimonials[currentIndex].content}&rdquo;
             </blockquote>
             <div className="flex items-center">
               {testimonials[currentIndex].avatar && (

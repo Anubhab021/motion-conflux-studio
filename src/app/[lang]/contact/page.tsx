@@ -15,9 +15,9 @@ export default function ContactPage() {
     <main className="container mx-auto px-4 py-12">
       <FadeInUp>
         <header className="mb-12 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Let's Work Together</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Let&apos;s Work Together</h1>
           <p className="text-lg text-black/70 dark:text-white/70 max-w-2xl mx-auto">
-            Ready to bring your creative vision to life? Get in touch and let's discuss your next project.
+            Ready to bring your creative vision to life? Get in touch and let&apos;s discuss your next project.
           </p>
         </header>
       </FadeInUp>
