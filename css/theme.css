@@ -1,0 +1,51 @@
+/* css/theme.css
+   Theme variable overrides. Uses [data-theme] on .site-wrapper
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;0,700&display=swap");
+:root {
+  --base-clr: #11121a;
+  --line-clr: #42434a;
+  --hover-clr: #222533;
+  --text-clr: #e6e6ef;
+  --accent-clr: #5e63ff;
+  --secondary-text-clr: #b0b3c1;
+  --radius: 14px;
+  --gap: 24px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 2px 4px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.12);
+
+  /* Focus & Outlines */
+  --focus: 2px solid rgba(24, 197, 201, 0.25);
+  --focus-within: 2px solid rgba(24, 197, 201, 0.15);
+
+  /* Spacing & Layout */
+  --radius: 14px;
+  --gap: 24px;
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+
+  /* Sidebar */
+  --sidebar-width: 240px;
+  --sidebar-collapsed-width: 72px;
+
+  /* Animation */
+  --duration: 280ms;
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+.site-wrapper {
+  transition: background-color 320ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 320ms cubic-bezier(0.4, 0, 0.2, 1);
+}

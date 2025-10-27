@@ -1,0 +1,679 @@
+--- index.html ---
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Anubhab Jana | Motion Conflux Studio</title>
+    <meta name="theme-color" content="#1D2A38" />
+    <link rel="icon" href="./assets/logo.png" type="image/png" />
+    <meta
+      name="description"
+      content="Anubhab Jana's Motion Conflux Studio: Stunning 2D/3D animation, VFX, graphics, and web design for brands and creators."
+    />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://anubhab021.github.io/motion-conflux-studio/"
+    />
+    <meta property="og:title" content="Anubhab Jana | Motion Conflux Studio" />
+    <meta
+      property="og:description"
+      content="Stunning 2D/3D animation, VFX, graphics, and web design for brands and creators."
+    />
+    <meta
+      property="og:image"
+      content="https://anubhab021.github.io/motion-conflux-studio/assets/images/hero.jpg"
+    />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta
+      property="twitter:url"
+      content="https://anubhab021.github.io/motion-conflux-studio/"
+    />
+    <meta
+      property="twitter:title"
+      content="Anubhab Jana | Motion Conflux Studio"
+    />
+    <meta
+      property="twitter:description"
+      content="Stunning 2D/3D animation, VFX, graphics, and web design for brands and creators."
+    />
+    <meta
+      property="twitter:image"
+      content="https://anubhab021.github.io/motion-conflux-studio/assets/images/hero.jpg"
+    />
+
+    <!-- Theme pre-init: set data-theme before CSS loads -->
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem("mc_theme");
+          if (t) document.documentElement.setAttribute("data-theme", t);
+          else if (window.matchMedia("(prefers-color-scheme: dark)").matches)
+            document.documentElement.setAttribute("data-theme", "dark");
+          else document.documentElement.setAttribute("data-theme", "light");
+        } catch (e) {}
+      })();
+    </script>
+
+    <!-- CDN Libraries -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/sidebar.css" />
+    <link rel="stylesheet" href="./css/home.css" />
+  </head>
+
+  <body>
+    <!-- Skip link for keyboard users -->
+    <a href="#main-content" class="skip-link">Skip to content</a>
+
+    <!-- Preloader (disabled)
+    <div id="preloader" aria-label="Loading" role="status">
+        <div class="spinner"></div>
+        <p>Loading Motion Conflux Studio...</p>
+    </div>
+    -->
+
+    <div class="page-wrap">
+      <!-- Sidebar overlay for mobile -->
+      <div
+        id="sidebar-overlay"
+        class="sidebar-overlay"
+        aria-hidden="true"
+      ></div>
+
+      <!-- Sidebar: Main navigation -->
+      <aside id="sidebar" class="sidebar" aria-label="Main navigation">
+        <!-- Desktop: header with logo + collapse toggle -->
+        <div class="sidebar-header">
+          <span class="logo" aria-hidden="true">Motion Conflux</span>
+          <button
+            id="toggle-btn"
+            aria-label="Collapse sidebar"
+            title="Collapse sidebar"
+          >
+            <span class="material-symbols-rounded" aria-hidden="true"
+              >chevron_left</span
+            >
+          </button>
+        </div>
+
+        <!-- Close button (mobile) -->
+        <button
+          id="nav-close"
+          aria-label="Close navigation"
+          class="nav-close-btn"
+        >
+          <span class="material-symbols-rounded">close</span>
+        </button>
+
+        <!-- Sidebar search -->
+        <form class="sidebar-search" role="search" aria-label="Site search">
+          <label for="site-search" class="sr-only">Search the site</label>
+          <input
+            id="site-search"
+            type="search"
+            placeholder="Search projects..."
+            aria-label="Search site"
+          />
+          <button type="submit" aria-label="Search">
+            <span class="material-symbols-rounded">search</span>
+          </button>
+        </form>
+
+        <nav>
+          <ul class="nav-links">
+            <li>
+              <a href="index.html" class="active">
+                <i class="fa-solid fa-house nav-icon" aria-hidden="true"></i>
+                <span>Home</span>
+              </a>
+            </li>
+            <li>
+              <a href="portfolio.html">
+                <i
+                  class="fa-solid fa-briefcase nav-icon"
+                  aria-hidden="true"
+                ></i>
+                <span>Portfolio</span>
+              </a>
+            </li>
+            <li>
+              <!-- Submenu toggle -->
+              <button
+                class="submenu-toggle dropdown-btn"
+                aria-expanded="false"
+                aria-controls="submenu-portfolio"
+                aria-haspopup="true"
+              >
+                <i
+                  class="fa-solid fa-layer-group nav-icon"
+                  aria-hidden="true"
+                ></i>
+                <span>Categories</span>
+                <span class="material-symbols-rounded" aria-hidden="true"
+                  >expand_more</span
+                >
+              </button>
+              <ul id="submenu-portfolio" class="submenu" hidden>
+                <li>
+                  <a href="portfolio/graphics/index.html"
+                    ><i
+                      class="fa-solid fa-image nav-icon"
+                      aria-hidden="true"
+                    ></i
+                    ><span>Graphics</span></a
+                  >
+                </li>
+                <li>
+                  <a href="portfolio/video/index.html"
+                    ><i class="fa-solid fa-film nav-icon" aria-hidden="true"></i
+                    ><span>Video</span></a
+                  >
+                </li>
+                <li>
+                  <a href="portfolio/vfx/index.html"
+                    ><i
+                      class="fa-solid fa-magic nav-icon"
+                      aria-hidden="true"
+                    ></i
+                    ><span>VFX</span></a
+                  >
+                </li>
+                <li>
+                  <a href="portfolio/2d-animation/index.html"
+                    ><i
+                      class="fa-solid fa-draw-polygon nav-icon"
+                      aria-hidden="true"
+                    ></i
+                    ><span>2D Animation</span></a
+                  >
+                </li>
+                <li>
+                  <a href="portfolio/3d-animation/index.html"
+                    ><i class="fa-solid fa-cube nav-icon" aria-hidden="true"></i
+                    ><span>3D Animation</span></a
+                  >
+                </li>
+                <li>
+                  <a href="portfolio/web/index.html"
+                    ><i class="fa-solid fa-code nav-icon" aria-hidden="true"></i
+                    ><span>Web</span></a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="about.html">
+                <i class="fa-solid fa-user nav-icon" aria-hidden="true"></i>
+                <span>About</span>
+              </a>
+            </li>
+            <li>
+              <a href="services.html">
+                <i
+                  class="fa-solid fa-hands-helping nav-icon"
+                  aria-hidden="true"
+                ></i>
+                <span>Services</span>
+              </a>
+            </li>
+            <li>
+              <a href="contact.html">
+                <i class="fa-solid fa-envelope nav-icon" aria-hidden="true"></i>
+                <span>Contact</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- Theme toggle -->
+        <div class="sidebar-footer">
+          <button
+            id="theme-toggle"
+            aria-label="Toggle dark/light mode"
+            aria-pressed="false"
+          >
+            <i class="fa-solid fa-moon" aria-hidden="true"></i>
+            <span>Dark Mode</span>
+          </button>
+        </div>
+      </aside>
+
+      <!-- Mobile bottom nav -->
+      <nav id="bottom-nav" class="mobile-nav" aria-label="Mobile navigation">
+        <button id="nav-toggle" aria-label="Open navigation">
+          <span class="material-symbols-rounded">menu</span>
+        </button>
+      </nav>
+
+      <main id="main-content" tabindex="-1">
+        <!-- Hero Section -->
+        <section class="hero-carousel" id="heroCarousel" aria-label="Showreel">
+          <div class="carousel-track">
+            <div class="carousel-slide">
+              <video
+                id="heroVideo-1"
+                playsinline
+                muted
+                loop
+                preload="metadata"
+                poster="./assets/placeholders/placeholder-400x300.jpg"
+                data-src="./assets/placeholders/placeholder-video.mp4"
+              ></video>
+              <div class="carousel-overlay">
+                <h1>Anubhab Jana</h1>
+                <p>Creative Editor & Designer • Motion Conflux Studio</p>
+                <div class="hero-actions">
+                  <a href="portfolio.html" class="btn btn-primary"
+                    ><i class="fa-solid fa-briefcase" aria-hidden="true"></i>
+                    View Portfolio</a
+                  >
+                  <a href="contact.html" class="btn btn-secondary"
+                    ><i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                    Hire Me</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="carousel-slide">
+              <img
+                src="./assets/placeholders/placeholder-400x300.jpg"
+                alt="Featured projects preview"
+                loading="lazy"
+              />
+              <div class="carousel-overlay">
+                <h1>Featured Works</h1>
+                <p>Video • VFX • Graphics • 3D • Web</p>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control carousel-prev" aria-label="Previous">
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+          <button class="carousel-control carousel-next" aria-label="Next">
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+          <div class="carousel-indicators" aria-hidden="true"></div>
+        </section>
+
+        <!-- Search & Filters Section -->
+        <section class="search-section">
+          <div class="container">
+            <h2 class="section-title">Find Your Perfect Project</h2>
+            <!-- Mobile quick chips (appears on scroll up) -->
+            <div class="category-chips" aria-label="Quick filters">
+              <button class="chip" data-jump="row-video">Video</button>
+              <button class="chip" data-jump="row-vfx">VFX</button>
+              <button class="chip" data-jump="row-graphics">Graphics</button>
+              <button class="chip" data-jump="row-3d">3D</button>
+              <button class="chip" data-jump="row-web">Web</button>
+            </div>
+            <div class="search-container">
+              <div class="search-input-wrapper">
+                <input
+                  type="search"
+                  id="main-search"
+                  placeholder="Search projects, tools, or keywords..."
+                />
+                <button
+                  type="button"
+                  class="search-clear"
+                  aria-label="Clear search"
+                >
+                  <span class="material-symbols-rounded">close</span>
+                </button>
+              </div>
+              <div class="search-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="video">Video</button>
+                <button class="filter-btn" data-filter="graphics">
+                  Graphics
+                </button>
+                <button class="filter-btn" data-filter="vfx">VFX</button>
+                <button class="filter-btn" data-filter="3d">3D</button>
+                <button class="filter-btn" data-filter="web">Web</button>
+              </div>
+            </div>
+            <div
+              id="search-suggestions"
+              class="search-suggestions"
+              hidden
+            ></div>
+          </div>
+        </section>
+
+        <!-- Featured Projects Carousel -->
+        <section class="featured-section">
+          <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="carousel-container">
+              <div class="carousel-wrapper">
+                <div class="carousel-track" id="featured-carousel">
+                  <!-- Featured projects will be loaded by JS -->
+                </div>
+              </div>
+              <div class="carousel-controls">
+                <button class="carousel-btn prev" aria-label="Previous project">
+                  <span class="material-symbols-rounded">chevron_left</span>
+                </button>
+                <button class="carousel-btn next" aria-label="Next project">
+                  <span class="material-symbols-rounded">chevron_right</span>
+                </button>
+              </div>
+              <div class="carousel-dots">
+                <!-- Dots will be generated by JS -->
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Hotstar-style Rows -->
+        <section class="content-rows">
+          <div class="container">
+            <h2 class="section-title">Latest Releases</h2>
+            <div class="trending-row" id="row-video">
+              <article class="card" tabindex="0">
+                <img class="card-thumb" src="./assets/placeholders/placeholder-400x300.jpg" alt="Project thumbnail" loading="lazy" />
+                <div class="card-content">
+                  <h3>Launch Trailer</h3>
+                  <p class="meta">Video • Premiere Pro</p>
+                </div>
+              </article>
+              <article class="card" tabindex="0">
+                <img class="card-thumb" src="./assets/placeholders/placeholder-400x300.jpg" alt="Project thumbnail" loading="lazy" />
+                <div class="card-content">
+                  <h3>Brand Promo</h3>
+                  <p class="meta">Video • After Effects</p>
+                </div>
+              </article>
+              <article class="card" tabindex="0">
+                <img class="card-thumb" src="./assets/placeholders/placeholder-400x300.jpg" alt="Project thumbnail" loading="lazy" />
+                <div class="card-content">
+                  <h3>Short Reel</h3>
+                  <p class="meta">Video • DaVinci Resolve</p>
+                </div>
+              </article>
+            </div>
+
+            <h2 class="section-title">VFX Highlights</h2>
+            <div class="trending-row" id="row-vfx">
+              <article class="card" tabindex="0">
+                <img class="card-thumb" src="./assets/placeholders/placeholder-400x300.jpg" alt="VFX shot" loading="lazy" />
+                <div class="card-content"><h3>Compositing Shot</h3><p class="meta">VFX • Nuke</p></div>
+              </article>
+              <article class="card" tabindex="0">
+                <img class="card-thumb" src="./assets/placeholders/placeholder-400x300.jpg" alt="VFX shot" loading="lazy" />
+                <div class="card-content"><h3>Set Extension</h3><p class="meta">VFX • Photoshop</p></div>
+              </article>
+            </div>
+
+            <h2 class="section-title">Graphics & Posters</h2>
+            <div class="trending-row" id="row-graphics">
+              <article class="card" tabindex="0">
+                <img class="card-thumb" src="./assets/placeholders/placeholder-400x300.jpg" alt="Poster" loading="lazy" />
+                <div class="card-content"><h3>Poster Series</h3><p class="meta">Graphics • Photoshop</p></div>
+              </article>
+              <article class="card" tabindex="0">
+                <img class="card-thumb" src="./assets/placeholders/placeholder-400x300.jpg" alt="Branding" loading="lazy" />
+                <div class="card-content"><h3>Brand Kit</h3><p class="meta">Graphics • Illustrator</p></div>
+              </article>
+            </div>
+
+            <h2 class="section-title">3D Experiments</h2>
+            <div class="trending-row" id="row-3d">
+              <article class="card" tabindex="0">
+                <img class="card-thumb" src="./assets/placeholders/placeholder-400x300.jpg" alt="3D" loading="lazy" />
+                <div class="card-content"><h3>Character Turntable</h3><p class="meta">3D • Blender</p></div>
+              </article>
+              <article class="card" tabindex="0">
+                <img class="card-thumb" src="./assets/placeholders/placeholder-400x300.jpg" alt="3D" loading="lazy" />
+                <div class="card-content"><h3>Environment Lookdev</h3><p class="meta">3D • Cycles</p></div>
+              </article>
+            </div>
+
+            <h2 class="section-title">Web UI Demos</h2>
+            <div class="trending-row" id="row-web">
+              <article class="card" tabindex="0">
+                <img class="card-thumb" src="./assets/placeholders/placeholder-400x300.jpg" alt="Web UI" loading="lazy" />
+                <div class="card-content"><h3>Landing Page</h3><p class="meta">Web • HTML/CSS/JS</p></div>
+              </article>
+              <article class="card" tabindex="0">
+                <img class="card-thumb" src="./assets/placeholders/placeholder-400x300.jpg" alt="Web UI" loading="lazy" />
+                <div class="card-content"><h3>Dashboard Concept</h3><p class="meta">Web • Vanilla JS</p></div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <!-- Bookmarked Projects -->
+        <section
+          class="bookmarks-section"
+          id="bookmarks-section"
+          aria-label="Bookmarked Projects"
+        >
+          <div class="container">
+            <h2 class="section-title">Your Bookmarks</h2>
+            <div id="bookmarked-strip" class="project-strip">
+              <div class="empty-state">
+                <i class="fa-solid fa-bookmark" aria-hidden="true"></i>
+                <p>
+                  No bookmarked projects yet. Click the bookmark icon on any
+                  project to save it here!
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Recommended Projects -->
+        <section class="recommend-section" aria-label="Recommended for You">
+          <div class="container">
+            <h2 class="section-title">Recommended for You</h2>
+            <div id="recommend-strip" class="project-strip">
+              <!-- Recommendations will be loaded by JS -->
+            </div>
+          </div>
+        </section>
+
+        <!-- Services & Tools -->
+        <section class="services-tools">
+          <div class="container">
+            <h2 class="section-title">Services & Tools</h2>
+            <div class="services-grid">
+              <div class="service-card">
+                <i class="fa-solid fa-video service-icon"></i>
+                <h3>Video Production</h3>
+                <p>
+                  Commercials, documentaries, music videos, and social media
+                  content
+                </p>
+              </div>
+              <div class="service-card">
+                <i class="fa-solid fa-cube service-icon"></i>
+                <h3>3D Animation</h3>
+                <p>Modeling, texturing, rigging, lighting, and rendering</p>
+              </div>
+              <div class="service-card">
+                <i class="fa-solid fa-draw-polygon service-icon"></i>
+                <h3>2D Animation</h3>
+                <p>Character animation, motion graphics, and visual effects</p>
+              </div>
+              <div class="service-card">
+                <i class="fa-solid fa-magic service-icon"></i>
+                <h3>VFX & Compositing</h3>
+                <p>Visual effects, compositing, and post-production</p>
+              </div>
+              <div class="service-card">
+                <i class="fa-solid fa-image service-icon"></i>
+                <h3>Graphics Design</h3>
+                <p>Branding, posters, packaging, and digital graphics</p>
+              </div>
+              <div class="service-card">
+                <i class="fa-solid fa-code service-icon"></i>
+                <h3>Web Development</h3>
+                <p>
+                  Responsive websites, e-commerce, and interactive experiences
+                </p>
+              </div>
+            </div>
+
+            <div class="tools-showcase">
+              <h3>Tools & Technologies</h3>
+              <div class="tools-grid">
+                <div class="tool-item" title="Adobe After Effects">
+                  <img
+                    src="./assets/placeholders/placeholder-logo.svg"
+                    alt="After Effects"
+                  />
+                  <span>After Effects</span>
+                </div>
+                <div class="tool-item" title="Blender">
+                  <img
+                    src="./assets/placeholders/placeholder-logo.svg"
+                    alt="Blender"
+                  />
+                  <span>Blender</span>
+                </div>
+                <div class="tool-item" title="Adobe Premiere Pro">
+                  <img
+                    src="./assets/placeholders/placeholder-logo.svg"
+                    alt="Premiere Pro"
+                  />
+                  <span>Premiere Pro</span>
+                </div>
+                <div class="tool-item" title="Adobe Photoshop">
+                  <img
+                    src="./assets/placeholders/placeholder-logo.svg"
+                    alt="Photoshop"
+                  />
+                  <span>Photoshop</span>
+                </div>
+                <div class="tool-item" title="Figma">
+                  <img
+                    src="./assets/placeholders/placeholder-logo.svg"
+                    alt="Figma"
+                  />
+                  <span>Figma</span>
+                </div>
+                <div class="tool-item" title="HTML5">
+                  <img
+                    src="./assets/placeholders/placeholder-logo.svg"
+                    alt="HTML5"
+                  />
+                  <span>HTML5</span>
+                </div>
+                <div class="tool-item" title="CSS3">
+                  <img
+                    src="./assets/placeholders/placeholder-logo.svg"
+                    alt="CSS3"
+                  />
+                  <span>CSS3</span>
+                </div>
+                <div class="tool-item" title="JavaScript">
+                  <img
+                    src="./assets/placeholders/placeholder-logo.svg"
+                    alt="JavaScript"
+                  />
+                  <span>JavaScript</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- About Teaser -->
+        <section class="about-teaser">
+          <div class="container">
+            <div class="about-content">
+              <h2>About Anubhab</h2>
+              <p>
+                I blend creativity and technology to deliver stunning visual
+                experiences that captivate audiences and drive results. With
+                expertise across multiple disciplines, I help brands and
+                creators bring their visions to life.
+              </p>
+              <div class="about-stats">
+                <div class="stat">
+                  <span class="stat-number">50+</span>
+                  <span class="stat-label">Projects Completed</span>
+                </div>
+                <div class="stat">
+                  <span class="stat-number">5+</span>
+                  <span class="stat-label">Years Experience</span>
+                </div>
+                <div class="stat">
+                  <span class="stat-number">100%</span>
+                  <span class="stat-label">Client Satisfaction</span>
+                </div>
+              </div>
+              <a href="about.html" class="btn btn-outline"
+                >Learn More About Me</a
+              >
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="container">
+          <div class="footer-content">
+            <div class="footer-brand">
+              <h3>Motion Conflux Studio</h3>
+              <p>Bringing your vision to life through creative excellence</p>
+            </div>
+            <div class="footer-social">
+              <a href="#" aria-label="YouTube" target="_blank" rel="noopener">
+                <i class="fa-brands fa-youtube"></i>
+              </a>
+              <a href="#" aria-label="Instagram" target="_blank" rel="noopener">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+              <a href="#" aria-label="LinkedIn" target="_blank" rel="noopener">
+                <i class="fa-brands fa-linkedin"></i>
+              </a>
+              <a href="#" aria-label="Behance" target="_blank" rel="noopener">
+                <i class="fa-brands fa-behance"></i>
+              </a>
+            </div>
+          </div>
+          <div class="footer-bottom">
+            <p>&copy; 2025 Anubhab Jana. All rights reserved.</p>
+            <p class="footer-links">
+              <a href="privacy.html">Privacy Policy</a>
+              <a href="terms.html">Terms of Service</a>
+            </p>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/7.0.0/fuse.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+    <script src="./js/app.js" defer></script>
+    <script src="./js/search.js" defer></script>
+    <script src="./js/player.js" defer></script>
+    <script src="./js/theme.js" defer></script>
+  </body>
+</html>

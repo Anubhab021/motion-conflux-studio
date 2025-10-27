@@ -1,0 +1,360 @@
+/* css/home.css
+   Hero carousel, featured grid, trending row, cards, bottom nav
+*/
+
+/* Hero carousel */
+.hero-carousel {
+  position: relative;
+  width: 100%;
+  height: 520px;
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: var(--space-lg);
+}
+.carousel-track {
+  display: flex;
+  height: 100%;
+  transition: transform 600ms var(--ease);
+}
+.carousel-slide {
+  min-width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.carousel-slide img,
+.carousel-slide video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Overlay content (match markup .carousel-overlay) */
+.carousel-slide .carousel-overlay,
+.carousel-slide .overlay {
+  position: absolute;
+  left: var(--space-lg);
+  bottom: var(--space-lg);
+  max-width: 640px;
+  /* subtle dark -> panel gradient for readable hero text */
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.55), var(--panel));
+  color: var(--text);
+  padding: calc(var(--space-md) + 6px);
+  border-radius: var(--radius, 12px);
+  box-shadow: var(--shadow-md);
+}
+.carousel-slide h1,
+.carousel-slide .carousel-overlay h1 {
+  font-family: var(--font-heading);
+  font-size: 2.6rem;
+  line-height: 1.05;
+  margin: 0 0 8px 0;
+  color: var(--text);
+}
+.carousel-slide p,
+.carousel-slide .carousel-overlay p {
+  margin: 0 0 12px 0;
+  color: var(--muted);
+}
+
+/* Carousel controls */
+.carousel-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--panel);
+  border-radius: 999px;
+  padding: 10px;
+  border: none;
+  z-index: 10;
+}
+.carousel-prev {
+  left: 14px;
+}
+.carousel-next {
+  right: 14px;
+}
+
+/* make controls more visible on hero */
+.carousel-control i {
+  color: var(--text);
+  font-size: 1.05rem;
+}
+.carousel-control {
+  background: rgba(7, 25, 32, 0.6);
+}
+
+/* Indicators */
+.carousel-indicators {
+  position: absolute;
+  right: var(--space-lg);
+  bottom: var(--space-lg);
+  display: flex;
+  gap: 8px;
+}
+
+.carousel-indicators button {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.18);
+  cursor: pointer;
+}
+.carousel-indicators button.active {
+  background: var(--accent-strong);
+  box-shadow: 0 0 8px rgba(24, 197, 201, 0.18);
+}
+
+/* Featured grid */
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
+/* Trending horizontal scroller */
+.trending-row {
+  display: flex;
+  gap: var(--space-md);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 8px;
+  margin-bottom: var(--space-lg);
+}
+.trending-row .card {
+  min-width: 220px;
+  scroll-snap-align: start;
+}
+
+/* Row controls wrapper */
+.row-with-controls {
+  position: relative;
+}
+.row-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+  opacity: 0.95;
+}
+.row-arrow-left {
+  left: 8px;
+}
+.row-arrow-right {
+  right: 8px;
+}
+.row-with-controls .row-arrow {
+  display: inline-flex;
+}
+@media (max-width: 900px) {
+  .row-arrow {
+    display: none;
+  }
+}
+
+/* Category cards */
+.categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--space-md);
+}
+
+/* Ensure card thumbnails fit and don't overflow */
+.card-thumb,
+.card .card-thumb,
+.card .thumb {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+  border-radius: 10px 10px 0 0;
+}
+
+/* Slightly reduce thumb height on narrow screens to avoid overflow */
+@media (max-width: 900px) {
+  .card-thumb,
+  .card .card-thumb,
+  .card .thumb {
+    height: 140px;
+  }
+}
+
+/* Categories grid: uniform cards with three columns on desktop */
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+}
+@media (max-width: 1100px) {
+  .categories-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 700px) {
+  .categories-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Card overlay icons */
+.card .overlay-icons {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  display: flex;
+  gap: 8px;
+}
+
+/* Card body */
+.card .card-body {
+  padding: 12px;
+}
+
+/* Bottom navigation for mobile */
+.bottom-nav {
+  height: var(--bottom-nav-height);
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.12));
+  display: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
+  z-index: 70;
+}
+/* Mobile quick chips */
+.category-chips {
+  position: sticky;
+  top: 0;
+  z-index: 60;
+  display: none;
+  gap: 8px;
+  padding: 8px var(--space-4);
+  background: linear-gradient(180deg, rgba(0,0,0,0.45), rgba(0,0,0,0.0));
+  backdrop-filter: blur(6px);
+}
+.category-chips .chip {
+  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.06);
+  color: var(--text);
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+}
+.category-chips.visible { display: flex; }
+
+.bottom-nav .nav-items {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+}
+
+/* Footer columns layout */
+.footer-columns {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-lg);
+}
+@media (max-width: 900px) {
+  .footer-columns {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Main row for trending and categories */
+.main-row {
+  display: flex;
+  gap: var(--gap);
+  margin: var(--space-lg) 0;
+  align-items: flex-start;
+}
+.main-col {
+  flex: 1 1 0;
+  min-width: 0;
+}
+.trending-col {
+  max-width: 420px;
+}
+.categories-col {
+  flex: 2 1 0;
+}
+
+/* Fix card alignment and overflow */
+.card {
+  margin-bottom: var(--space-md);
+  box-sizing: border-box;
+}
+.card-content h3 {
+  color: var(--text);
+  font-size: 1.1rem;
+  margin-bottom: 4px;
+}
+.card-content .meta {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+.card-overlay i {
+  color: var(--accent);
+}
+
+/* Improve link color contrast */
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+a:hover,
+a:focus {
+  color: var(--accent-strong);
+  text-decoration: underline;
+}
+
+/* Visible focus ring for keyboard users */
+a:focus-visible,
+button:focus-visible,
+.icon-btn:focus-visible {
+  outline: var(--focus, 2px solid rgba(24, 197, 201, 0.18));
+  outline-offset: 2px;
+}
+
+/* Prevent horizontal overflow */
+html,
+body {
+  overflow-x: hidden;
+}
+
+@media (max-width: 900px) {
+  .hero-carousel {
+    height: 320px;
+  }
+  .featured-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .bottom-nav {
+    display: block;
+  }
+
+  /* Search highlight */
+  .mc-highlight {
+    background: rgba(24, 197, 201, 0.12);
+    color: var(--text);
+    padding: 0 2px;
+    border-radius: 2px;
+  }
+  .card.mc-selected {
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+    border: 1px solid var(--accent-strong);
+  }
+  .main-row {
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+  .trending-col,
+  .categories-col {
+    max-width: 100%;
+  }
+}
